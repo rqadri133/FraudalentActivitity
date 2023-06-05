@@ -1,0 +1,15 @@
+/Users/syedqadri/Documents/Development/FraudulentActivity/bin/Debug/net7.0/FraudulentActivity
+/Users/syedqadri/Documents/Development/FraudulentActivity/bin/Debug/net7.0/FraudulentActivity.deps.json
+/Users/syedqadri/Documents/Development/FraudulentActivity/bin/Debug/net7.0/FraudulentActivity.runtimeconfig.json
+/Users/syedqadri/Documents/Development/FraudulentActivity/bin/Debug/net7.0/FraudulentActivity.dll
+/Users/syedqadri/Documents/Development/FraudulentActivity/bin/Debug/net7.0/FraudulentActivity.pdb
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.csproj.AssemblyReference.cache
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.GeneratedMSBuildEditorConfig.editorconfig
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.AssemblyInfoInputs.cache
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.AssemblyInfo.cs
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.csproj.CoreCompileInputs.cache
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.dll
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/refint/FraudulentActivity.dll
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.pdb
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/FraudulentActivity.genruntimeconfig.cache
+/Users/syedqadri/Documents/Development/FraudulentActivity/obj/Debug/net7.0/ref/FraudulentActivity.dll

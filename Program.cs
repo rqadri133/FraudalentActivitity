@@ -125,7 +125,7 @@ public class Line
     { 
         Dictionary<int,int> limitExpenditure = new Dictionary<int, int>();
          int l = 0;
-         int counter = 1 ;
+         int counter = 0 ;
          int indexer = 0 ;
          int repeat =0 ;
          Transaction transaction = new Transaction();
@@ -171,8 +171,8 @@ public class Line
               occurance.StartIndex = indexer;
               occurance.EndIndex = currentIndexEnd;
               occurances.Add(occurance);
-              
-              counter = 0;
+              l = l + 1;
+              counter = l;
               
               
 

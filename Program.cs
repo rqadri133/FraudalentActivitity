@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 using System.IO;
-
+using FraudulentActivity.Notifications;
 
 
            IEnumerable<string> files = Directory.EnumerateFiles(Environment.CurrentDirectory + "//TestData//" );
@@ -120,6 +120,76 @@ public class Line
          
          
      }
+
+    public static List<TransactionOccurance>  checkSpendingAISpirals(List<int> checkSameExpenditures , int days )
+    { 
+        Dictionary<int,int> limitExpenditure = new Dictionary<int, int>();
+         int l = 0;
+         int counter = 1 ;
+         int indexer = 0 ;
+         int repeat =0 ;
+         Transaction transaction = new Transaction();
+        TransactionOccurance occurance = new TransactionOccurance();
+            
+       //  List<int> limitExpenditure = new List<int>();
+        List<Transaction> transactionsRepeat = new List<Transaction>();
+        List<TransactionOccurance> occurances = new List<TransactionOccurance>();
+         while( indexer < checkSameExpenditures.Count - 1  )
+         {
+            
+            
+            if(limitExpenditure.ContainsKey(checkSameExpenditures[counter]))
+            {
+                transaction = new Transaction();
+                // A duplicate transaction entry found here 
+                transaction.Amount = checkSameExpenditures[counter];
+                transaction.RepatedAmountTimes = repeat;
+                transaction.DayLimit = days; 
+                transaction.TransactionIndexStart = indexer;
+                transactionsRepeat.Add(transaction);
+            
+
+                repeat++;
+
+            } 
+
+            limitExpenditure.Add(checkSameExpenditures[indexer], indexer);
+            // find repeat transaction during the day limit cycle
+            // this is different then the one notifications 
+            // 
+           if(counter == days)
+           {
+              // The problem here is during that sepecific days find that specific repeat 
+              // Find all end during that duration from Start Index
+              int currentIndexEnd  = indexer + days - 1;
+              transactionsRepeat = transactionsRepeat.FindAll(p=>p.TransactionIndexStart <= currentIndexEnd); 
+              // Number of repeat transactions found for counter slab 
+              
+              // if for any occurance
+              occurance = new TransactionOccurance();
+              occurance.TransactionsFound = transactionsRepeat; 
+              occurance.StartIndex = indexer;
+              occurance.EndIndex = currentIndexEnd;
+              occurances.Add(occurance);
+              
+              counter = 0;
+              
+              
+
+              
+           }     
+           counter = counter + 1;  
+           // this is overall indexer will never updated to 0
+           indexer = indexer + 1;
+
+         }
+        
+         return occurances;
+            
+
+
+
+    }
 
     public static int activityNotifications(List<int> expenditure, int d)
     {

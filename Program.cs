@@ -31,8 +31,24 @@ using FraudulentActivity.Notifications;
                
                int result = Result.activityNotifications(expenditure, d);
 
-               Console.WriteLine($"Number of Notifications Send out for Data Test File {filepath}  is : {result} ");
+                
+               List<TransactionOccurance> occurances = Result.checkSpendingAISpirals(expenditure,d);
+               foreach(TransactionOccurance occurance in occurances)
+               {
+                 Console.WriteLine($"The Occurance of Fraud injection AI found at {occurance.StartIndex} and covered till {occurance.EndIndex}");
+                  foreach(Transaction tran in occurance.TransactionsFound)
+                  {
 
+                    Console.WriteLine($"I have found  at this interval {tran.DayLimit} the Duplicate Amount is: {tran.Amount} for almost {tran.RepatedAmountTimes} number of Times");
+ 
+
+
+                  }
+
+               }
+
+               Console.WriteLine($"Number of Notifications Send out for Data Test File {filepath}  is : {result} ");
+               
 
            }
          
@@ -152,8 +168,15 @@ public class Line
                 repeat++;
 
             } 
+            else 
+            {
+                repeat = 1;
+                limitExpenditure.Add(checkSameExpenditures[indexer], indexer);
+ 
 
-            limitExpenditure.Add(checkSameExpenditures[indexer], indexer);
+
+            }
+
             // find repeat transaction during the day limit cycle
             // this is different then the one notifications 
             // 

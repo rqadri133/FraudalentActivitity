@@ -17,7 +17,8 @@ using FraudulentActivity.Notifications;
 // the assignment excercise question problem 
 // owned by hacker rank i am a hacker rank 
 // student and got 3 certificates
-
+// i have only provided solution as learning process
+// please dont cheat from it learning is fine
            IEnumerable<string> files = Directory.EnumerateFiles(Environment.CurrentDirectory + "//TestData//" );
            List<Line> lines = new List<Line>();
            // Currently its just one structure 
